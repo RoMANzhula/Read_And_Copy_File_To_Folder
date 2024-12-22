@@ -2,29 +2,37 @@ import java.io.*;
 import java.util.Date;
 
 public class ClassBufferInputStream {
-    public long returnTimeOperation(String file1) throws IOException { //метод для возвращения результата копирования файла
-        Date date = new Date();//создаем новый обьект класса Дата
-        File file2 = new File("C:\\Users\\User\\Desktop\\dataFileInputWriterWithBuffer"); //создаем новый файл, в
-        // который будем копировать данные
+    // Метод для повернення результату копіювання файлу
+    public long returnTimeOperation(String file1) throws IOException { 
+        Date date = new Date(); // Створюємо новий об'єкт класу Date
+        File file2 = new File("C:\\Users\\User\\Desktop\\dataFileInputWriterWithBuffer"); 
+        // Створюємо новий файл, в який будемо копіювати дані
 
-        FileInputStream fileInputStream = new FileInputStream(file1);//открываем поток для чтения данных с указанного файла
-        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);//открываем буферизированный поток
-        // для потока чтения данных
+        FileInputStream fileInputStream = new FileInputStream(file1); 
+        // Відкриваємо потік для зчитування даних із вказаного файлу
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream); 
+        // Відкриваємо буферизований потік для зчитування даних
 
-        FileOutputStream fileOutputStream = new FileOutputStream(file2);//открываем поток для записи данных в указанный файл
+        FileOutputStream fileOutputStream = new FileOutputStream(file2); 
+        // Відкриваємо потік для запису даних у вказаний файл
 
         int i;
 
-        while ((i = bufferedInputStream.read()) != -1) {//пока в буфферизированном потоке есть данные для чтения
-            fileOutputStream.write(bufferedInputStream.readAllBytes());//с помощью потока для записи данных в файл пишем
-            //из буфферизированного потока все считанные байты
-            fileOutputStream.flush(); //очищаем буфер вывода данных
+        // Поки в буферизованому потоці є дані для зчитування
+        while ((i = bufferedInputStream.read()) != -1) { 
+            fileOutputStream.write(bufferedInputStream.readAllBytes()); 
+            // З буферизованого потоку записуємо всі зчитані байти у файл
+            fileOutputStream.flush(); // Очищаємо буфер виводу даних
         }
-        fileInputStream.close(); //закрываем потоки
+
+        // Закриваємо всі потоки
+        fileInputStream.close(); 
         fileOutputStream.close();
         bufferedInputStream.close();
-        Date date1 = new Date();//создаем новый обьект класса Дата
-        long l = (date1.getTime() - date.getTime()); //по обьектам класса Дата вычисляем время выполнения копирования
-        return l; //возвращаем пезультат (в миллисекундах)
+
+        Date date1 = new Date(); // Створюємо новий об'єкт класу Date
+        long l = (date1.getTime() - date.getTime()); 
+        // Обчислюємо час виконання копіювання (у мілісекундах)
+        return l; // Повертаємо результат
     }
 }
