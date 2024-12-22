@@ -9,8 +9,8 @@ public class ClassNewFile {
         createNewFile(pathName);
     }
     public void createNewFile(String pathName) throws IOException {
-        File file1 = new File(pathName); //создаем новый файл (с адресом)
-        //откудого будем производить копирование данных в другой файл
+        File file1 = new File(pathName); // створюємо новий файл (з адресою)
+        // звідки будемо виконувати копіювання даних в інший файл
         String str = "Hello world! Hello all humans! SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSssssss" +
                 "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" +
                 "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" +
@@ -24,17 +24,16 @@ public class ClassNewFile {
                 "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" +
                 "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" +
                 "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" +
-                "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss" +
-                "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"; // создаем
-        // новую строку и инициализируем ее литералом
+                "sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"; // створюємо
+        // новий рядок і ініціалізуємо його літералом
 
-        FileOutputStream outputStreamStr = new FileOutputStream(file1); //создаем новый поток для записи данных из строки
-        outputStreamStr.write(str.getBytes()); //через поток пишем данные в файл преобразуя данные в байты
-        outputStreamStr.close(); //закрываем поток для записи данных
+        FileOutputStream outputStreamStr = new FileOutputStream(file1); // створюємо новий потік для запису даних з рядка
+        outputStreamStr.write(str.getBytes()); // через потік записуємо дані у файл, перетворюючи їх на байти
+        outputStreamStr.close(); // закриваємо потік для запису даних
     }
 
-    @Override //аннотация - переопределить
-    public String toString() { //публичный метод типа Строка кСтроковомуВиду()
-        return pathName; //возвращаем содержимое ссыл.переменной
+    @Override // анотація - переозначити
+    public String toString() { // публічний метод типу String до СтроковогоВиду()
+        return pathName; // повертаємо вміст змінної-ссилки
     }
 }
