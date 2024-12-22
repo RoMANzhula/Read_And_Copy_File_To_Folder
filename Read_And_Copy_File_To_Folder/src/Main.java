@@ -1,25 +1,25 @@
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException { //главный метод, кот.пробрасывает исключение входного-
-        //выходного потока
-        ClassNewFile newFile = new ClassNewFile("C:\\Users\\User\\Desktop\\dataTotalFileForRead"); //создаем
-        //новый обьект для создания файла со строковым указанием адреса в качестве аргумента конструктора класса
+    public static void main(String[] args) throws IOException { // головний метод, який передає виняток ввідно-
+        // вихідного потоку
+        ClassNewFile newFile = new ClassNewFile("C:\\Users\\User\\Desktop\\dataTotalFileForRead"); // створюємо
+        // новий об'єкт для створення файлу з рядковим вказівником адреси як аргумент конструктора класу
 
         ClassFileReadWrite classFileReadWrite = new ClassFileReadWrite();
-        System.out.println("FileReader and FileWriter - time operation: " +
+        System.out.println("FileReader і FileWriter - час операції: " +
                 classFileReadWrite.returnTimeOperation(newFile.toString()));
 
         ClassFileInput_OutputStream classFileInput_outputStream = new ClassFileInput_OutputStream();
-        System.out.println("FileInputStream and FileOutputStream - time operation: " +
+        System.out.println("FileInputStream і FileOutputStream - час операції: " +
                 classFileInput_outputStream.returnTimeOperation(newFile.toString()));
 
         ClassBufferInputStream cBIS = new ClassBufferInputStream();
-        System.out.println("FileInputStream and FileOutputStream with BufferedInputStream - time operation: " +
+        System.out.println("FileInputStream і FileOutputStream з BufferedInputStream - час операції: " +
                 cBIS.returnTimeOperation(newFile.toString()));
 
     }
 }
 
-//Написать программу, которая читает файл из одной папки и копирует его в другой.
-//Попробовать разные методы. Сравнить производительность.
+// Написати програму, яка читає файл з однієї папки і копіює його в іншу.
+// Спробувати різні методи. Порівняти продуктивність.
