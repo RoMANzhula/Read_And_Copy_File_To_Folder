@@ -3,33 +3,36 @@ import java.util.Date;
 
 public class ClassFileInput_OutputStream {
     public long returnTimeOperation(String file1) throws IOException {
-        long timeOperation;//создаем переменную для вывода времени на операцию копирования в миллисекундах
-        long time1;//создаем переменную для фиксации времени перед началом копирования
-        long time2;//создаем переменную для фиксации времени после окончания копирования
-        Date date = new Date();//создаем новйы обьект класса Дата и кладем в ссыл.переменную
-        time1 = date.getTime();//фиксируем время перед началом копирования
+        long timeOperation; // Створюємо змінну для виводу часу операції копіювання у мілісекундах
+        long time1; // Створюємо змінну для фіксації часу перед початком копіювання
+        long time2; // Створюємо змінну для фіксації часу після завершення копіювання
+        Date date = new Date(); // Створюємо новий об'єкт класу Date і зберігаємо його у змінну
+        time1 = date.getTime(); // Фіксуємо час перед початком копіювання
 
-        File file2 = new File("C:\\Users\\User\\Desktop\\dataFileInputWriter"); //создаем новый файл, в который будем
-        // копировать данные
+        File file2 = new File("C:\\Users\\User\\Desktop\\dataFileInputWriter"); 
+        // Створюємо новий файл, у який будемо копіювати дані
 
-        FileInputStream inputStream = new FileInputStream(file1);//создаем проток для чтения данных с файла
-        FileOutputStream outputStream = new FileOutputStream(file2);//создаем поток для записи данных в
-        //указанный файл
+        FileInputStream inputStream = new FileInputStream(file1); 
+        // Створюємо потік для зчитування даних з файлу
+        FileOutputStream outputStream = new FileOutputStream(file2); 
+        // Створюємо потік для запису даних у вказаний файл
 
-        while (inputStream.available() > 0) {//пока есть в потоке ввода данные для чтения (непрочитанные байты)
-            int data = inputStream.read();//читаем один символ, кот.будет расширен до типа int
-            outputStream.write(data);//записываем один символ через поток для записи в файл (произойдет сужение
-            // до типа char)
+        // Поки у потоці вводу є дані для зчитування (непрочитані байти)
+        while (inputStream.available() > 0) { 
+            int data = inputStream.read(); 
+            // Зчитуємо один символ, який буде розширений до типу int
+            outputStream.write(data); 
+            // Записуємо один символ через потік для запису у файл (відбудеться звуження до типу char)
         }
 
-        inputStream.close();//закрываем поток для чтения данных из файла
-        outputStream.close();//закрываем поток для записи данных в файл
+        inputStream.close(); // Закриваємо потік для зчитування даних з файлу
+        outputStream.close(); // Закриваємо потік для запису даних у файл
 
-        Date date1 = new Date();//создаем новйы обьект класса Дата и кладем в ссыл.переменную
-        time2 = date1.getTime();//фиксируем время после окончания копирования
-        timeOperation = time2 - time1;//вычисляем разницу - получив результат в миллисекундах
+        Date date1 = new Date(); // Створюємо новий об'єкт класу Date і зберігаємо його у змінну
+        time2 = date1.getTime(); // Фіксуємо час після завершення копіювання
+        timeOperation = time2 - time1; 
+        // Обчислюємо різницю, отримуючи результат у мілісекундах
 
-        return timeOperation; //возвращаем результат времени
-
+        return timeOperation; // Повертаємо результат часу
     }
 }
